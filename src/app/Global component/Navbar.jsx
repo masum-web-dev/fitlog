@@ -16,7 +16,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex justify-center items-center gap-6">
-                    <Link href="/workouts" className="bg-[#1a1a1a] text-[#ccff00] px-4 py-2 rounded-full font-medium text-sm border border-[#ccff00]/20">
+                    <Link href="/" className="bg-[#1a1a1a] text-[#ccff00] px-4 py-2 rounded-full font-medium text-sm border border-[#ccff00]/20">
                         Workouts
                     </Link>
                     <Link href="/my-plan" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">

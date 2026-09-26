@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import TodaysPlan from '@/app/Logical components/TodaysPlan';
+import SaveForLater from '@/app/Logical components/SaveForLater';
 
 const getData = async () => {
     const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
@@ -12,10 +14,6 @@ const WorkoutDetailsPage = async ({ params }) => {
     const workouts = await getData();
 
     const workout = workouts.find((item) => item.id.toString() === id.toString());
-
-    if (!workout) {
-        return <div className="text-center py-20 text-white animate-pulse">Workout not found!</div>;
-    }
 
     const { name, image, description, muscleGroups, equipment, difficulty, sets, reps, duration, caloriesBurned, rating, instructions } = workout;
 
@@ -98,12 +96,8 @@ const WorkoutDetailsPage = async ({ params }) => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button className="flex-1 bg-[#ccff00] text-black font-bold py-3.5 px-6 rounded-xl hover:bg-[#b3e600] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#ccff00]/20 text-sm flex items-center justify-center gap-2">
-                            <span>📅</span> Add to today's plan
-                        </button>
-                        <button className="flex-1 bg-[#121417] border border-gray-800 text-white font-bold py-3.5 px-6 rounded-xl hover:bg-gray-800 hover:border-gray-700 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] text-sm flex items-center justify-center gap-2">
-                            <span>🔖</span> Save for later
-                        </button>
+                        <TodaysPlan workout={workout}></TodaysPlan>
+                        <SaveForLater workout={workout}></SaveForLater>
                     </div>
 
                 </div>

@@ -1,11 +1,24 @@
-import React, { createContext } from 'react';
+'use client'; 
+import React, { createContext, useState } from 'react';
 
-const PlanContext = createContext();
+export const PlanContext = createContext({});
 
-const PlanContextProvider = () => {
+const PlanContextProvider = ({children}) => {
+
+    const [todaysPlan, setTodaysPlan] = useState([]);
+    const [saveForLater, setSaveForLater] = useState([]);
+
+    const sharedDatas = {
+        todaysPlan,
+        setTodaysPlan,
+        saveForLater,
+        setSaveForLater
+    }
+
     return (
-        <PlanContext.Provider value={}></PlanContext>
+        <PlanContext.Provider value={sharedDatas}>{children}</PlanContext.Provider>
     );
 };
 
 export default PlanContextProvider;
+

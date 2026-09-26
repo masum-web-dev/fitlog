@@ -19,7 +19,7 @@ const Navbar = () => {
                     <Link href="/" className="bg-[#1a1a1a] text-[#ccff00] px-4 py-2 rounded-full font-medium text-sm border border-[#ccff00]/20">
                         Workouts
                     </Link>
-                    <Link href="/my-plan" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">
+                    <Link href="/myplan" className="text-gray-300 hover:text-white text-sm font-medium transition-colors">
                         My Plan
                     </Link>
                 </div>

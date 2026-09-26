@@ -11,7 +11,7 @@ const NotFoundPage = () => {
                     Page Not Found
                 </h1>
                 <p className="text-gray-400 text-xs sm:text-sm max-w-md mx-auto">
-                    Looks like you pushed past your limits and wandered off the training ground. Let's get you back on track.
+                    Looks like you pushed past your limits and wandered off the training ground. Lets get you back on track.
                 </p>
             </div>
 

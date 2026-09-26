@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { PlanContext } from '../context/PlanContext';
 
 const MyPlanPage = () => {
-    const { todaysPlan, savedList, removeFromSaved } = useContext(PlanContext);
+    const { todaysPlan, savedList, removeFromPlan, removeFromSaved } = useContext(PlanContext);
     const [activeTab, setActiveTab] = useState('plan');
     const [sortBy, setSortBy] = useState('duration');
     const [doneWorkouts, setDoneWorkouts] = useState([]);
@@ -167,7 +167,7 @@ const MyPlanPage = () => {
                                     )}
 
                                     <button 
-                                        onClick={() => activeTab === 'plan' ? removeFromSaved(item.id) /* অথবা প্ল্যান থেকে রিমুভ করতে চাইলে যথোপযুক্ত ফাংশন */ : removeFromSaved(item.id)}
+                                        onClick={() => activeTab === 'plan' ? removeFromPlan(item.id) : removeFromSaved(item.id)}
                                         className="text-gray-400 hover:text-red-400 p-2 transition-colors cursor-pointer text-base font-bold"
                                     >
                                         ✕

@@ -14,8 +14,8 @@ const Navbar = () => {
     const isMyPlanActive = pathname === '/myplan';
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md text-white px-6 py-4 border-b border-gray-800 shadow-md">
-            <div className="max-w-7xl mx-auto grid grid-cols-3 items-center">
+        <nav className="w-full bg-black/90 backdrop-blur-md text-white px-4 sm:px-8 py-4 border-b border-gray-800 shadow-md">
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
                 
                 <div className="flex items-center">
                     <Link href="/" className="flex items-center gap-2.5">
@@ -24,7 +24,7 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                <div className="flex justify-center items-center gap-6">
+                <div className="hidden md:flex items-center gap-6">
                     <Link 
                         href="/" 
                         className={`px-4 py-2 rounded-full font-medium text-sm border transition-colors ${
@@ -47,7 +47,7 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                <div className="flex justify-end items-center gap-6 text-sm">
+                <div className="flex items-center gap-6 text-sm">
                     <div className="flex items-center gap-2">
                         <span className="text-gray-300">Plan</span>
                         <span className="bg-[#ccff00] text-black font-bold w-6 h-6 rounded-full flex items-center justify-center text-xs">
